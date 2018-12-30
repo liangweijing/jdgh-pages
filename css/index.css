@@ -1,0 +1,265 @@
+*{
+	padding: 0;   
+	margin: 0;
+}
+/*分两个盒子，版心和通栏的背景广告*/
+.jd{
+	/*height: 480px;*/
+	background-color: pink;
+	position: relative;
+}
+.jd-inner{
+	height: 480px;
+	background-color: white;
+	position: relative; /*不是absolute，因为会转行内块*/
+	z-index: 999; /*版心部分在广告上面*/
+}
+.ad{
+	height: 480px;
+	width: 100%; /*转行内块，宽度是内容宽，加了强制显示宽度*/
+	background: url(../images/bg.png) no-repeat top center;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.ad a{
+	display: block;  /*要整个通栏广告都能点击，不转行内元素又没有内容宽高都是0点击不了*/
+	width: 100%;	
+	height: 100%;	
+}
+
+/*main部分版心分三块*/
+/*第一块jd-col1电器导航*/
+.jd-col1{
+	height: 465px;
+	width: 190px;
+	background-color: #6e6568 ;
+	float: left;
+	padding-top: 15px;
+}
+.jd-col1 li{
+	padding-left: 10px;
+	height: 28px;
+	line-height: 28px;  
+}
+.jd-col1 li:hover{
+	background-color: #999395;
+}
+.jd-col1 li a{
+	color: white;
+	font-size: 14px;
+}
+.jd-col1 li span{
+	color: #fff;
+	font-size: 12px;
+}
+
+/*main第二块轮播图*/
+.jd-col2{
+	height: 480px;
+	width: 790px;
+	float: left;
+	margin: 0 10px;
+	/*background-color: blue;*/
+}
+.jd-col2-hd{
+	height: 340px;
+	/*background-color: pink;*/
+	margin-bottom: 10px;
+	position: relative;
+	left: -4px;
+}
+.arr-l,.arr-r{
+	position: absolute;
+	top:50%;
+	margin-top: -30px;
+	width: 30px;
+	height: 60px;
+	background: rgba(0,0,0,0.3);
+	line-height: 60px;
+	text-align: center;
+	color: #fff;
+}
+.arr-l{
+	left: 5px;
+}
+.arr-r{
+	right: -5px;
+}
+.jd-col2-hd ol{
+	position: absolute;
+	bottom: 20px;
+	left: 50%;
+	margin-left: -90px;
+	width: 180px;
+	height: 20px;
+	background: rgba(255,255,255,0.3);
+	border-radius: 10px; /*高度一半就是圆角*/
+}
+.jd-col2-hd li{
+	width: 12px;
+	height: 12px;
+	background-color: #fff;
+	border-radius: 50%;
+	float: left;
+	margin: 4px 5px;
+	cursor: pointer;
+}
+.jd-col2-hd .current{/*使用js鼠标经过谁谁就等于current*/
+	background-color: #f10215;
+}
+.firstimg{
+	margin-right: 10px;
+}
+.jd-col2-bd div{
+	float: left;
+	width: 390px;
+	height: 130px;
+}
+.jd-col2-bd div img{
+	/*float: left;给图片加浮动没用是行内元素*/
+	width: 100%;
+}
+
+/*第三块*/
+.jd-col3{
+	height: 480px;
+	width: 190px;
+	float: left;
+	/*background-color: yellow;*/
+}
+.jd-col3 a{
+	font-size: 12px;
+	color: #747474;
+}
+.jd-col3 .user{
+	height: 95px;
+	background-color: #fff;
+	padding: 20px 15px 0;
+}
+.user-info{
+	height: 40px;
+	padding-left: 54px;
+	font-size: 12px;
+	color:#747474;
+	line-height: 22px; 
+	position: relative;
+}
+.user-info a{
+	font-size: 12px;
+	color:#747474;
+}
+.user-info a:hover{
+	color:#f10215;
+}
+.info-img{
+	width: 40px;
+	height: 40px;
+	position: absolute;
+	top:0;
+	left: 0;
+	border-radius: 50%;
+	overflow: hidden;
+}
+.info-img img{
+	width: 100%;
+	height: auto;
+}
+.user-profit{
+	margin-top: 24px;
+}
+.user-profit a{
+	 width: 70px;
+	 height: 20px;
+	 border: 1px solid #f10215;
+	 display: inline-block;
+	 font-size: 12px;
+	 color: #f10215;
+	 text-align: center;
+	 line-height: 20px;
+	 margin-right: 5px;
+}
+.user-profit a:hover{
+
+	 border: 2px solid #f10215;
+	 background-color: #f10215;
+	 font-size: 12px;
+	 color: #fff;
+	
+	 
+	}
+.news{
+	height: 154px;
+	/*background-color: purple;*/
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+}
+.tab-hd{
+	border-bottom: 1px solid #ccc;
+	padding: 3px 0;
+	margin: 0 4px;
+	position: relative; /*子绝父相，父亲加相对定位是不会对自己有任何影响的*/
+}
+
+.cuxiao{
+	border-right: 1px solid #ccc;
+	padding-right: 10px;
+}
+.news_more{
+	position: absolute;
+	top: 6px;
+	right: 0;
+}
+.line{
+	width: 28px;
+	height: 2px;
+	background-color: #f10215;
+	position: absolute;
+	left: 0;
+	bottom: -1px;
+}
+.tab-bd{
+	margin-top:10px;
+}
+.tab-bd li{
+	height: 23px;
+	line-height: 23px;
+
+}
+.jd-service{
+	/*height: 210px;*/
+	/*background-color: red;*/
+	height: 209px;
+	overflow: hidden;   
+}
+.jd-service ul{
+	width: 195px;
+}
+.jd-service li{
+	width: 47px;
+	height: 69px;
+	/*background-color: purple;*/
+	float: left;
+	border-right: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+}
+.jd-service li a{
+	width: 100%;
+	height: 100%; /*这是根据父亲，宽高是父亲的100%*/
+	/*height: auto;这是针对自己的宽度高度自适应，比如图片等比例缩放*/
+	display:block;
+}
+.jd-service i{
+	width: 24px;
+	height: 24px;
+	display: block;
+	margin: 15px auto 8px;
+	background: url(../images/sprite_fs@1x.png) no-repeat top left;
+}
+.jd-service .sprite2{
+	background: url(../images/sprite_fs@1x.png) no-repeat -44px 0px; /*图片向左移动是负值*/
+}
+.jd-service p{
+	text-align: center;
+}
+

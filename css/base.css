@@ -1,0 +1,485 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?u40h2y');
+  src:  url('../fonts/icomoon.eot?u40h2y#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?u40h2y') format('truetype'),
+    url('../fonts/icomoon.woff?u40h2y') format('woff'),
+    url('../fonts/icomoon.svg?u40h2y#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+*{
+	margin: 0;
+	padding: 0;
+}
+.w{/* 版心公共类 */
+	width: 1190px;
+	margin: 0 auto;
+}
+/*  浮动的公共类 */
+.fr{
+	float: right;
+}
+.fl{
+	float: left;
+}
+.style-red{
+	color: #f10215!important;
+}
+.clearfix:before,.clearfix:after { 
+  content:"";
+  display:table;  /* 这句话可以出发BFC BFC可以清除浮动,BFC我们后面讲 */
+}
+.clearfix:after {
+ clear:both;
+}
+.clearfix {
+  *zoom:1;
+}
+body{
+	background-color: #f6f6f6;
+}
+input,button{
+	padding: 0;
+}
+/*发现浏览器中使用ul,li都有这个问题所以拿到开头*/
+h1,h5,p,ul{
+	margin: 0;
+	padding: 0;
+}
+ li{
+	
+	list-style: none;
+}
+a{
+	text-decoration: none;
+}
+/*顶部start*/
+.J_event{
+	background-color: #000;
+	height: 80px;
+}
+.J_event a{
+	height: 80px;
+	display: block;
+	background: url(../images/header.jpg) no-repeat left;
+	position: relative;
+}
+.J_event a span{
+	background: url(../images/toolbars.png) no-repeat 0 -249px;
+	/* */
+	/*display: block; 行内元素不能设置大小，大小为内容。加了定位自动转换不需要了*/
+	height: 15px;
+	width: 12px;
+	background-color: rgba(0,0,0,.3);
+	position: absolute;
+	top: 0;
+	right: 0;
+	color: #fff;
+	text-align: center;
+	line-height: 25px;
+}
+/*顶部end*/
+/*快捷导航栏start*/
+.shortcut{
+	
+	height: 30px;
+	background-color: #e3e4e5;
+	border-bottom: 1px solid #ddd;
+	line-height: 30px; /*垂直居中行高会继承，不用左盒子右盒子分开定行高*/
+	font-size: 12px;
+	color: #999;
+}
+
+.shortcut a{
+	text-decoration: none;
+	font-size: 12px;
+	color: #999;
+}
+.shortcut a:hover{
+	color: #f10215;
+}
+.shortcut  .fl{
+	height: 30px;
+	margin-left: 200px;
+}
+.shortcut .fr li{
+	float: left;
+	
+}
+.pos{
+	font-family: "icomoon";
+	color: #f10215;
+	font-size: 14px;
+	font-style: normal;
+}
+
+.spacer{
+	width: 1px;
+	height: 10px;
+	background-color: #ccc;
+	margin: 10px 10px 0; 
+}
+.shortcut .dropdown{
+	padding-right: 15px;
+	position: relative;
+}
+ .dropdown i{
+	font-family: "icomoon";
+	font-size: 16px;
+	font-style: normal;
+	position: absolute;
+	left: 51px;
+	bottom: 4px;
+}
+.triangle{
+	width: 0;	
+	height: 0;	
+	border-bottom: 8px solid white;
+	border-top: 8px solid rgba(255,255,255,0);
+	border-left: 8px solid rgba(255,255,255,0);
+	border-right: 8px solid rgba(255,255,255,0); 
+	position: absolute;
+	left: 20px;
+	top: 15px;
+}
+.erweima{
+	width: 60px;
+	height: 60px;
+	border: 1px solid #ccc;
+	position: absolute;
+	padding: 3px;
+	left: -8px;
+	top: 35px;
+
+}
+/*快捷导航栏end*/
+/*header开始*/
+.header{
+	height: 140px;
+}
+.inner{
+	height: 140px;
+	/*background-color: pink; */
+	position: relative;
+}
+/*logo*/
+.logo{
+	width: 190px;
+	height: 170px; 
+	position: absolute;
+	top: -30px;
+	left: 0;
+	background-color: white;
+	box-shadow: 0 -12px 10px rgba(0,0,0,.2); /*水平阴影  垂直阴影 模糊度 颜色*/
+
+}
+.logo h1{
+	margin: 0;
+}
+.logo a{
+	display: block;
+	/*width: 100%;
+	height: 100%;不能这么写，其父亲是h1，h1的100%不是整个logo*/
+	width: 190px;
+	height: 170px;  
+	background: url(../images/logo.png)  no-repeat left top;
+	text-indent: -9999px;
+	overflow: hidden;
+}
+/*logo*/
+/*search*/
+.search{
+	/*这个盒子的大小是包括边框的*/
+	width: 550px;
+	height: 35px;
+	position: absolute;
+	top: 25px;
+	left: 320px;
+}
+.search input{
+/*input的大小量的时候不包括边框,但是input默认有内边距*/
+width: 493px;
+height: 33px;
+border: 1px solid #f10215;
+/*padding: 0 0 0 5px;不愿意那么麻烦就写到公共类中*/
+padding-left: 5px;
+/*取消蓝色边框*/
+outline: none; 
+font-size: 14px;
+float: left;
+}
+.search button{
+	/*button有默认外边框*/
+	border: 0;
+	width: 50px;
+	height: 35px;
+	background-color: #f10215;
+	float: left;
+	cursor: pointer;
+
+}
+.search i{
+	font-family: "icomoon";
+	color: white;
+	font-style: normal;
+}
+.search span{
+	/*父亲已经有了绝对定位*/
+	position: absolute;
+	width: 19px;
+	height: 15px;
+	background-color: blue;
+	top: 10px;
+	right: 65px;
+	cursor: pointer;
+	background: url(../images/sprite-search.png) no-repeat 0 0;
+}
+.search span:hover{
+	background: url(../images/sprite-search.png) no-repeat -30px 0;
+}
+/*search*/
+/*hotwords*/
+.hotwords{
+	position: absolute;
+	left: 320px;
+	top: 70px;
+}
+.hotwords a{
+	color: #9e9b99;
+	font-size: 12px;
+}
+.hotwords a:hover{
+	color: #f10215;
+}
+/*hotwords*/
+/*mycar*/
+.mycar{
+	position: absolute;
+	top: 25px;
+	right: 100px;
+	width: 188px;
+	height: 33px;
+	border: 1px solid #ccc;
+	line-height: 33px;
+text-align: center;
+}
+.mycar a{
+	
+	color: #f10215;
+	font-size: 12px;
+}
+.mycar i{
+	font-family: "icomoon";
+	font-style: normal;
+	color: #f10215;
+	font-size: 12px;
+	margin-right: 5px;
+}
+.mycar s{
+	background-color: #f10215;
+	position: absolute;
+	top: 5px;
+	left: 140px;
+	text-decoration: none;
+	line-height: 16px;
+	height: 16px;
+	font-size: 12px;
+	padding: 0 3px;
+	border-radius: 7px;
+	color: #fff;
+}/*mycar*/
+/*compter*/
+.computer{
+	position: absolute;
+	right: 0;
+	bottom: 10px;
+	
+}
+
+/*compter*/
+/* 导航栏 */
+.navitems{
+	position: absolute;
+	left: 200px;
+	bottom: 0;
+}
+.navitems ul{
+	float: left; /*浮动不会继承*/
+
+}
+.navitems li{
+	float: left;
+	margin-left: 30px;
+}
+.navitems li a{
+	font-weight: 700;
+	font-size: 16px;
+	color: #555A5f;
+	height: 40px;
+	line-height: 40px;
+}
+.navitems a:hover{
+	color: #f10215;
+}
+.navitems .spacer{/*权重大层叠掉上面的spacer样式*/
+	width: 1px;
+	height: 10px;
+	background-color: #ccc;
+	margin: 10px 10px 0; 
+	float: left;
+	margin: 15px -10px 0 20px;
+}
+/* 导航栏 */
+/*headerend*/
+/*footer开始*/
+.footer{
+	height: 560px;
+	background-color:  #eaeaea;
+}
+.footer-service{
+	/*height: 100px;给了孩子父亲就不需要行高了，会被孩子撑开*/
+	border-bottom: 1px solid #dedede;
+}
+.service-w{
+	/*background-color: pink;*/
+	padding: 30px 0;
+}
+.footer-service li{
+	float: left;
+	width: 297px;
+	height: 42px;
+	/*background-color: purple;*/
+	
+}
+.service_unit{
+	width: 225px;
+	height: 42px;
+	margin: 0 auto;
+	position: relative;
+}
+.service_unit h5{
+	width: 36px;
+	height: 42px;
+	/*background-color: blue;*/
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: url(../images/ico.png) no-repeat ;
+	text-indent: -999px;
+	overflow: hidden;
+}.service_unit .h5_2{
+	background: url(../images/ico.png) no-repeat 0 -43px;
+}
+
+.service_unit .h5_3{
+	
+	background: url(../images/ico.png) no-repeat 0 -87px;
+}
+.service_unit .h5_4{
+	
+	background: url(../images/ico.png) no-repeat 0 -129px;
+}
+.service_unit p{
+	margin-left: 45px;
+	line-height: 42px;
+	font-size: 18px;
+	font-weight: 700;
+}
+/* footer-serivce */
+/*购物指南*/
+.help{
+	height: 180px;
+	/*background-color: pink;*/
+	padding-top: 20px; /*因为一开始量了高*/
+}
+.help dl{
+	float: left;
+	/*不用担心清除浮动，父亲给了高*/
+	width: 195px;
+	/*宽度剩余法，文字默认上顶部左部对齐。不用margin因为IE6双倍边距问题，盒子浮动给了margin，100变200*/
+}
+.help dt{
+	font-size: 14px;
+	font-weight: 700;
+	color: #666;
+	height: 30px;
+
+}
+.help dd{
+	height: 22px;
+	line-height: 22px;
+}
+.help dd a{
+	color: #727272;
+	font-size: 12px;
+
+
+}
+.help dd a:hover{
+	color: #f10215;
+}
+.help .cover{
+	/*覆盖左浮动*/
+	width: 207px;
+	height: 150px;
+	float: right;
+	background: url(../images/ico_footer.png) no-repeat ;
+
+}
+.cover dt{
+	text-align: center;
+}
+.cover .info{
+	width: 175px;
+	height: 50px;
+	font-size: 12px;
+	margin-top: 5px;
+	margin-left: 10px;
+}
+.more{
+	text-align: right;
+	padding-right: 10px;
+	line-height: 18px;
+	color: #727272;
+	/*右对齐最简单做法*/
+}
+/*购物指南*/
+/*copyright*/
+.copyright {
+	border-top: 1px solid #ccc;
+	padding-top: 15px;
+
+}
+.link{
+	text-align: center;
+}
+.copyright .link a{
+	color: #727272;
+	font-size: 12px;
+}
+.link span{
+	font-size: 12px;
+	color: #d4cdcd;
+	margin: 0 5px;
+}
+.c-info{
+	font-size: 12px;
+	color: #9e9e9b;
+	text-align: center;
+	line-height: 20px;
+	margin-top: 10px;
+}
+.third{
+	text-align: center;
+	margin-top: 10px;
+}
+.third a{
+	width: 103px;
+	height: 32px;
+	display: inline-block;
+	
+	background: url(../images/ico_footer.png) no-repeat 0-151px;
+}
+/*copyright*/
+/*footer结束*/
